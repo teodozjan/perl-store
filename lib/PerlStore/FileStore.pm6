@@ -7,7 +7,8 @@ sub serialize($what) returns Str {
 }
 
 sub deserialize(Str $sth){
-    EVAL $sth
+    note "Will eval now $sth";
+    EVAL($sth)
 }
 
 sub to_file($path, $what) is export {
@@ -18,7 +19,6 @@ sub to_file($path, $what) is export {
 }
 
 sub from_file($path) is export {
-    #note "Reading class from file may be very slow";
     if $path.IO ~~ :e {
 	return deserialize(slurp $path)
     } else {
