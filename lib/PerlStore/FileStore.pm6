@@ -7,7 +7,6 @@ sub serialize($what) returns Str {
 }
 
 sub deserialize(Str $sth){
-    note "Will eval now $sth";
     EVAL($sth)
 }
 
