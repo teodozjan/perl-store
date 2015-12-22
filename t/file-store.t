@@ -8,7 +8,7 @@ has $.a;
 has $.b;
 }
 
-class Foo does FileStore{
+class Foo does FileStore {
 has %.x;
 has $.u;
 has Bar $.bar;
